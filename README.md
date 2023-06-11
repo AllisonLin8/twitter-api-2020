@@ -66,11 +66,13 @@
 
 > Windows 系統在 Check Requirements 點擊 Next 時，可能會出現相關編輯器軟體未達標準規格的提醒視窗。在這裡我們先點選 Yes。
 
-5. 創建 root 密碼，安裝完成並啟動 MySQL Workbench，點擊 MySQL 圖標後，會秀出資料庫伺服器的狀態。一開始進來伺服器會是「停用」的狀態，請點擊 Start MySQL Server 啟動你的伺 器。當圈圈變成綠色，且按鈕變成 Stop MySQL Server，就代表現在 MySQL 已經啟用。
-
 > Windows 系統點選 Execute 執行安裝。完成後點擊 Next ，進到 Product Configuration 後，再次點擊 Next。
 
-> Windows 系統一直點 NEXT 直到進入到 Type and Networking 設定，請選擇 Development Computer，將 TCP/IP 和 Open Windows
+> Windows 系統一直點 NEXT 直到進入到 Type and Networking 設定，請選擇 Development Computer，將 TCP/IP 和 Open Windows Firewall ports for network access，再次點擊 Next。
+
+> Windows 系統確保你選擇 Use Legacy Authentication Method \*，然後點擊 Next
+
+5. 創建 root 密碼，安裝完成並啟動 MySQL Workbench，點擊 MySQL 圖標後，會秀出資料庫伺服器的狀態。一開始進來伺服器會是「停用」的狀態，請點擊 Start MySQL Server 啟動你的伺 器。當圈圈變成綠色，且按鈕變成 Stop MySQL Server，就代表現在 MySQL 已經啟用。
 
 **### MySQL 部署**
 
@@ -86,13 +88,7 @@ Password: password
 
 3. 點擊 OK，你會看到 Workbench MySQL Connections 的下方出現了我們剛剛新增的 Local instance 3306。
 
->
-
 4. 點擊新建好的 Local instance 3306 來啟動連線，首先會被要求登入 MySQL server，使用 root/password 登入，就完成了 MySQL Workbench 的基本安裝與設定，並成功與本機的 MySQL server 連線了
-
->
-
-5.
 
 ---
 
@@ -100,7 +96,7 @@ Password: password
 
 1. 請先確保本地有安裝 Node.js 、 MySQL Workbench 及 npm。
 
-2. 將本專案下載至本地存放。
+2. 將本專案下載至本地存放，並在專案內新增 temp 和 upload 資料夾（用以管理暫存圖片使用）。
 
 3. 請使用終端機，並移至存放本專案的位置。
 
