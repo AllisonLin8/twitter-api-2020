@@ -40,7 +40,6 @@ const followshipController = {
         followship.destroy()
         return res.json({ status: 'success', message: '取消追蹤！' });
     })
-        .then(() => res.redirect('back'))
         .catch (err => next(err))
     }
 }
