@@ -12,6 +12,7 @@ const {
     Like,
     Reply
 } = require('../models')
+const Helpers = require('faker/lib/helpers')
 
 const userServices = {
     signIn: async (req, cb) => {
@@ -302,10 +303,10 @@ const userServices = {
                     {
                         model: User,
                         attributes: ['avatar', 'name', 'introduction'],
-                        as: 'Followings'
+                        as: 'Followers'
                     }
                 ],
-                where: { followerId: id },
+                where: { followerId:  id},
                 order: [['createdAt', 'DESC']]
             })
             if (followings.length === 0) throw new Error("該名使用者沒有追蹤過任何人！")
@@ -331,7 +332,7 @@ const userServices = {
                     {
                         model: User,
                         attributes: ['avatar', 'name', 'introduction'],
-                        as: 'Followers'
+                        as: 'Followings'
                     }
                 ],
                 where: { followingId: id },
