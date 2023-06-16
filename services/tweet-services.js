@@ -43,7 +43,7 @@ const tweetServices = {
     },
     getTweet: async (req, cb) => {
     try {
-        const { id } = req.params;
+        const { id } = req.params
         
         const tweet = await Tweet.findOne({
             where: { id },
@@ -61,10 +61,10 @@ const tweetServices = {
                     attributes: ['id']
                 }
             ],
-        });
+        })
 
         if (!tweet) {
-            throw new Error('推文不存在！');
+            throw new Error('推文不存在！')
         }
 
         const isLiked = await Like.findOne({
@@ -72,15 +72,15 @@ const tweetServices = {
                 TweetId: id,
                 UserId: helpers.getUser(req).id
             }
-        });
+        })
 
         const likeCount = await Like.count({
             where: { TweetId: id }
-        });
+        })
 
         const replyCount = await Reply.count({
             where: { TweetId: id }
-        });
+        })
 
         cb(null, {
             ...tweet.toJSON(),
@@ -89,10 +89,10 @@ const tweetServices = {
             createdAt: switchTime(tweet.createdAt),
             countDown: relativeTimeFromNow(tweet.createdAt),
             isLiked: !!isLiked
-        });
-    } catch (err) {
-        cb(err);
-    }
+        })
+        } catch (err) {
+            cb(err)
+        }
     },
     postTweets: async(req, cb) => {
         try {
